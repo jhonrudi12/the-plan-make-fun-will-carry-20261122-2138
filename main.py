@@ -12,9 +12,11 @@ ENTRY = (
 
 
 def main() -> None:
+    text = ENTRY.rstrip()
+    assert text, "entry text must not be empty"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
-        f.write(ENTRY)
+        f.write(text)
 
 
 if __name__ == "__main__":
