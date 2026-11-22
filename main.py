@@ -12,6 +12,8 @@ ENTRY = (
 
 
 def main() -> None:
+    # The gate counts 1-280 characters and rejects whitespace-only text,
+    # so strip trailing whitespace before writing to keep the entry exact.
     text = ENTRY.rstrip()
     assert text, "entry text must not be empty"
     os.makedirs("/output", exist_ok=True)
